@@ -1,0 +1,41 @@
+<% include partial/header.ejs%>
+<div class="ui main text container">
+    <div class="ui huge header">AcciCheck</div>
+    <div class="ui top attached segment ">
+        <div class="ui divided items">
+            <% for(var i=0;i<arr.length;i++){%>
+            <div class="item">
+                <div class="image">
+                <img src="<%= arr[i].image %>">
+                </div>
+            </div>
+             <div class="content">
+                <a class="header" href="/blogs/<%=arr[i]._id%>"><%= arr[i].title %></a>
+            </div>
+            <div class="meta">
+               <span> <%= arr[i].created.toDateString()%></span>
+            </div>
+            <div class="description">
+                <%- arr[i].body %>.....
+            </div>
+            <div class="extra">
+                <a href="/blogs/<%=arr[i]._id%>">
+                    <div class="ui animated button" tabindex="0">
+                    <div class="visible content">See More</div>
+                    <div class="hidden content">
+                    <i class="right arrow icon"></i>
+                  </div>
+                  </div>
+                </a>
+            </div>
+            
+            
+
+<%}%>
+        </div>
+    </div>
+</div>
+
+
+
+<% include partial/footer.ejs%>

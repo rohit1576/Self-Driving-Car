@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+
+	<title>Blogs</title>
+    <link rel="shortcut icon" type="image/png" href="http://www.nsit.ac.in/static/images/societies/CSI.jpg"/>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.css">
+
+	<link rel="stylesheet" type="text/css" href="/app.css">
+</head>
+<body>
+    <div class="ui fixed inverted menu">
+            <div class="ui container">
+               
+                <a href="/" class="item">Home</a>
+                <a href="/blogs" class="item">Blogs</a>
+                 
+                
+                <%if(currentUser){%>
+                    <%if(currentUser.id==='105508196870499'){%>
+                <a href="/blogs/new" class="item">New Post</a>
+                <%}%>
+
+                <a href="/logout" class="item float right">Logout</a>
+                <%}%>
+
+                <%if(!currentUser){%>
+               <a href="/login" class="item float right">Login</a> 
+               <%}%>
+                
+            </div>
+        </div>
+       
+
