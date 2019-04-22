@@ -57,40 +57,6 @@ app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname + "/views/home.html"));
 });
 
-message = " ";
-where.is("", function(err, result) {
-  if (result) {
-    message = message + "Address: Dwarka Sector-3" + "\n" + "City: ";
-  } else {
-    console.log(err);
-  }
-});
-
-var transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: "accicheck@gmail.com",
-    pass: "hacknsut"
-  }
-});
-
-var mailOptions = {
-  from: "accicheck@gmail.com",
-  to: "karanjain5698@gmail.com",
-  subject: "Accident!",
-  text: "An accident has been located at location: \n" + message
-};
-
-let MailtoHospital = function() {
-  transporter.sendMail(mailOptions, function(error, info) {
-    if (error) {
-      console.log(error);
-    } else {
-      console.log("Email sent: " + info.response);
-    }
-  });
-};
-
 //import { PythonShell } from "python-shell";
 const options = {
   mode: "text",
